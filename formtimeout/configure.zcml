@@ -8,6 +8,14 @@
 
     <five:registerPackage package="." />
 
+    <genericsetup:registerProfile
+       name="default"
+       title="formtimeout"
+       directory="profiles/default"
+       description="Add timeout to html forms"
+       provides="Products.GenericSetup.interfaces.EXTENSION"
+       />
+       
     <browser:resourceDirectory
         name="formtimeout"
         directory="static"
