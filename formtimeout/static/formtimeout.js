@@ -5,11 +5,10 @@ jQuery(function () {
         var $form = $(this);
         var url = $form.attr('action');
         var parms = $form.serialize();
-        console.log('submitted', url, parms);
         $.ajax(url, {
-            method: 'POST',
+            type: 'POST',
             data: parms,
-            format: 'html',
+            dataType: 'html',
             timeout: 3000
         }).fail(function (xhr, textStatus) {
             if (textStatus == 'timeout') {
