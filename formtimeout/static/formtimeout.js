@@ -1,6 +1,8 @@
 
 jQuery(function () {
 
+    DEFAULT_TIMEOUT = 10000;   // millis
+
     $('body').on('submit', 'form', function(evt) {
         var $form = $(this);
         var url = $form.attr('action');
@@ -9,7 +11,7 @@ jQuery(function () {
             type: 'POST',
             data: parms,
             dataType: 'html',
-            timeout: 3000
+            timeout: DEFAULT_TIMEOUT
         }).fail(function (xhr, textStatus) {
             if (textStatus == 'timeout') {
                 alert('ERROR: The form submission has timed out.');
